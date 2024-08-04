@@ -51,26 +51,15 @@ app.get('*', (req, res) => {
     console.log('404 page')
 })
 
-/**  orginal code
 
-    // connecting to database
-    connectDB()
+// connecting to database
+connectDB()
 
-    // Server
-    app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`)
-    });
-
-*/
+// Server
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`)
+});
 
 
-// modified code for deploying on cyclic
-// cyclic requires connecting to database FIRST
-connectDB().then(() => {
-    // then connect to Server after database connection
-    app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`)
-    });
-})
 
 
