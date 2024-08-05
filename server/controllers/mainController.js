@@ -3,7 +3,8 @@ const expressEjsLayouts = require("express-ejs-layouts")
 exports.homepage = async (req, res) => {
     const locals = {
         title: 'NodeNotes',
-        description: 'A simple notes app made with Node.js'
+        description: 'A simple notes app made with Node.js',
+        signedIn: req.user ? true : false
     }
 
     res.render('index', {
