@@ -16,7 +16,8 @@ exports.homepage = async (req, res) => {
 exports.about = async (req, res) => {
     const locals = {
         title: 'NodeNotes - About',
-        description: 'About NodeNotes'
+        description: 'About NodeNotes',
+        signedIn: req.user ? true : false
     }
     
     res.render('about', {
@@ -28,7 +29,8 @@ exports.about = async (req, res) => {
 exports.features = async (req, res) => {
     const locals = {
         title: 'NodeNotes - Features',
-        description: 'About NodeNotes features'
+        description: 'About NodeNotes features',
+        signedIn: req.user ? true : false
     }
     
     res.render('features', {
