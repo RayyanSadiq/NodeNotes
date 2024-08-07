@@ -21,6 +21,18 @@ exports.about = async (req, res) => {
     
     res.render('about', {
         locals,
-        layout: '../views/layouts/front-page'
+        layout: '../views/layouts/default-page'
+    })
+}
+
+exports.features = async (req, res) => {
+    const locals = {
+        title: 'NodeNotes - Features',
+        description: 'About NodeNotes features'
+    }
+    
+    res.render('features', {
+        locals,
+        layout: '../views/layouts/default-page'
     })
 }
